@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="390" viewBox="0 0 1280 390" role="img" aria-label="FYZER Salesforce Portfolio — Architecture, automation, and operational excellence">
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#081226"/><stop offset=".52" stop-color="#122449"/><stop offset="1" stop-color="#091a34"/></linearGradient><linearGradient id="accent" x1="0" x2="1"><stop stop-color="#53deed"/><stop offset="1" stop-color="#7d8bff"/></linearGradient><pattern id="dot" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#9edbee" opacity=".13"/></pattern></defs>
+<rect width="1280" height="390" rx="24" fill="url(#bg)"/><rect width="1280" height="390" rx="24" fill="url(#dot)"/>
+<circle cx="1080" cy="120" r="190" fill="#5b7eff" opacity=".08"/><circle cx="1090" cy="110" r="125" fill="none" stroke="#74d7ef" stroke-width="1.5" opacity=".28"/><circle cx="1090" cy="110" r="82" fill="none" stroke="#74d7ef" stroke-width="1" opacity=".32"/>
+<path d="M855 116 L966 116 L1016 165 L1100 165 M956 250 L1065 250 L1115 202 L1220 202 M935 327 L1028 327 L1092 260 L1200 260" fill="none" stroke="#72dff1" stroke-width="2" opacity=".5"/>
+<g fill="#6ee9ed"><circle cx="855" cy="116" r="6"/><circle cx="1100" cy="165" r="6"/><circle cx="956" cy="250" r="6"/><circle cx="1220" cy="202" r="6"/><circle cx="935" cy="327" r="6"/><circle cx="1200" cy="260" r="6"/></g>
+<rect x="64" y="51" width="199" height="32" rx="16" fill="#274569"/><text x="79" y="72" font-family="Arial,sans-serif" font-weight="bold" font-size="14" fill="#9becfa" letter-spacing="2">SALESFORCE • FYZER</text>
+<text x="64" y="161" font-family="Arial,sans-serif" font-weight="bold" font-size="69" fill="#fff" letter-spacing="1">Built to operate.</text>
+<text x="64" y="222" font-family="Arial,sans-serif" font-weight="bold" font-size="53" fill="url(#accent)">Designed to scale.</text>
+<text x="66" y="268" font-family="Arial,sans-serif" font-size="20" fill="#c4d7ec">A Salesforce administration, automation &amp; architecture portfolio</text>
+<rect x="65" y="307" width="160" height="40" rx="10" fill="#23415e"/><text x="84" y="332" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#e2faff">30 evidence views</text>
+<rect x="237" y="307" width="175" height="40" rx="10" fill="#23415e"/><text x="255" y="332" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#e2faff">5 dashboards</text>
+<rect x="425" y="307" width="191" height="40" rx="10" fill="#23415e"/><text x="445" y="332" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#e2faff">65/65 dry-run</text></svg>
