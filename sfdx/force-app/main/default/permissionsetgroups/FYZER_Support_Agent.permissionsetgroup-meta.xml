@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Provides support agents access to customer cases, accounts, and contacts for customer service operations.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>FYZER - Support Agent</label>
+    <permissionSets>FYZER_Support_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

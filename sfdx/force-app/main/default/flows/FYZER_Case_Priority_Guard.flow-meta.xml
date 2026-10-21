@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <assignments>
+        <name>Set_High_Priority</name>
+        <label>Set High Priority</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Before-save: escalates Priority to High when the subject indicates an outage, so the FYZER Case Escalation rule catches it even if the reporter picks the wrong priority. (Note: Case.EntitlementId is not exposed in this org&apos;s Flow Builder — verified in five pickers — so entitlement auto-attach stays a manual agent step via the Entitlement Name lookup on the Case layout; milestone timers start once an agent links the entitlement.) No fault path: before-save (Fast Field Updates) flows cannot perform DML on other records, and this in-memory Assignment has no fault surface; the platform surfaces any flow error on save.</description>
+    <environments>Default</environments>
+    <interviewLabel>FYZER - Case Priority Guard {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FYZER - Case Priority Guard</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_High_Priority</targetReference>
+        </connector>
+        <filterLogic>(1 OR 2) AND 3</filterLogic>
+        <filters>
+            <field>Subject</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>outage</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Subject</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>down</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Priority</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

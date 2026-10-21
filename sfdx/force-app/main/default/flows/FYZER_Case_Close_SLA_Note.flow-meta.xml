@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Post_to_Chatter</name>
+        <label>Post to Chatter</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <faultConnector>
+            <targetReference>Log_Fault</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <stringValue>Case closed under entitlement SLA. Per the FYZER Standard Support process, milestone timers stop when the case closes.</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>chatterPost</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>68.0</apiVersion>
+    <description>After-save: when a case with an entitlement is closed, posts an SLA audit note to the case feed. Entitlement milestone timers stop automatically on close per the FYZER Standard Support process.</description>
+    <environments>Default</environments>
+    <interviewLabel>FYZER - Case Close SLA Note {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FYZER - Case Close SLA Note</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Log_Fault</name>
+        <label>Log_Fault</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Error_Message__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Flow_Name__c</field>
+            <value>
+                <stringValue>FYZER_Case_Close_SLA_Note</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Related_Record__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>FYZER_Automation_Log__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Post_to_Chatter</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT(ISBLANK({!$Record.EntitlementId})),
+ISPICKVAL({!$Record.Status}, &quot;Closed&quot;),
+NOT(ISPICKVAL({!$Record__Prior.Status}, &quot;Closed&quot;))
+)</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Provides customer success managers read-only access to accounts, contacts, and cases for monitoring customer relationships.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>FYZER - Customer Success Manager</label>
+    <permissionSets>FYZER_Customer_Success_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

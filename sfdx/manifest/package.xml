@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- FYZER portfolio manifest: every member below was verified present in the
+         fyzer.co Developer Edition org on 2026-10-20. Retrieve with:
+         sf project retrieve start -x manifest/package.xml -o <org-alias> -->
+    <types>
+        <members>FYZER_Automation_Log__c</members>
+        <members>FYZER_Project__c</members>
+        <members>FYZER_Project_Resource__c</members>
+        <members>FYZER_Timesheet_Entry__c</members>
+        <members>FYZER_Project_Milestone__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Account.Customer_Lifecycle_Stage__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>FYZER_Case_Priority_Guard</members>
+        <members>FYZER_Case_Auto_Entitlement</members>
+        <members>FYZER_Case_Close_SLA_Note</members>
+        <members>FYZER_Create_Onboarding_Task</members>
+        <members>FYZER_Customer_Onboarding</members>
+        <members>FYZER_Opportunity_Won_Handler</members>
+        <members>FYZER_Account_Active_Customer_Handoff</members>
+        <members>FYZER_Update_Project_Totals</members>
+        <members>FYZER_API_Demo_Callout</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Account.FYZER_Active_Customer_Requires_SLA</members>
+        <name>ValidationRule</name>
+    </types>
+    <types>
+        <members>FYZER_Sales_Access</members>
+        <members>FYZER_Sales_Manager_Access</members>
+        <members>FYZER_Customer_Success_Access</members>
+        <members>FYZER_Support_Access</members>
+        <members>FYZER_Support_Manager_Access</members>
+        <members>FYZER_Finance_Access</members>
+        <members>FYZER_Demo_API_Access</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>FYZER_Sales_Representative</members>
+        <members>FYZER_Sales_Manager</members>
+        <members>FYZER_Customer_Success_Manager</members>
+        <members>FYZER_Support_Agent</members>
+        <members>FYZER_Support_Manager</members>
+        <name>PermissionSetGroup</name>
+    </types>
+    <types>
+        <members>FYZER_Demo_API</members>
+        <name>NamedCredential</name>
+    </types>
+    <types>
+        <members>FYZER_Account_Summary</members>
+        <name>GenAiPromptTemplate</name>
+    </types>
+    <version>62.0</version>
+</Package>

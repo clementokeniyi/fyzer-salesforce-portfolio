@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>FYZER_Get_Todo</name>
+        <label>FYZER Get Todo</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>FYZERJSONPlaceholderService.FYZER Get Todo</actionName>
+        <actionType>externalService</actionType>
+        <connector>
+            <targetReference>Log_API_Result</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <nameSegment>FYZERJSONPlaceholderService.FYZER Get Todo</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>68.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>Log_Message</name>
+        <dataType>String</dataType>
+        <expression>&quot;HTTP &quot; &amp; TEXT({!FYZER_Get_Todo.responseCode}) &amp; &quot; - &quot; &amp; {!FYZER_Get_Todo.2XX.title}</expression>
+    </formulas>
+    <interviewLabel>FYZER - API Demo Callout {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FYZER - API Demo Callout</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Log_API_Result</name>
+        <label>Log API Result</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Error_Message__c</field>
+            <value>
+                <elementReference>Log_Message</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Flow_Name__c</field>
+            <value>
+                <stringValue>FYZER_API_Demo_Callout</stringValue>
+            </value>
+        </inputAssignments>
+        <object>FYZER_Automation_Log__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>FYZER_Get_Todo</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>

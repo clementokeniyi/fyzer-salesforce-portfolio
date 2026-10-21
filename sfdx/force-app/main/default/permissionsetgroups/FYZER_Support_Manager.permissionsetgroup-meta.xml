@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Combines standard support access with additional case management permissions for support team leadership.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>FYZER - Support Manager</label>
+    <permissionSets>FYZER_Support_Access</permissionSets>
+    <permissionSets>FYZER_Support_Manager_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

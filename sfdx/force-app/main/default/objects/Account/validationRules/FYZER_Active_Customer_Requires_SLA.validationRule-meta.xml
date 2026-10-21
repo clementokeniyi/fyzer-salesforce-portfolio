@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FYZER_Active_Customer_Requires_SLA</fullName>
+    <active>true</active>
+    <description>Prevents an account from becoming an active customer without a documented SLA expiration date.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Customer_Lifecycle_Stage__c, &quot;Active Customer&quot;),
+  ISBLANK(SLAExpirationDate__c)
+)</errorConditionFormula>
+    <errorMessage>An SLA expiration date is required before an account can be marked as an Active Customer.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Provides sales representatives access to leads, accounts, contacts, and opportunities.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>FYZER - Sales Representative</label>
+    <permissionSets>FYZER_Sales_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

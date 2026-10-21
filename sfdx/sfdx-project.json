@@ -1,0 +1,12 @@
+{
+    "name": "fyzer-salesforce-portfolio",
+    "namespace": "",
+    "packageDirectories": [
+        {
+            "default": true,
+            "path": "force-app"
+        }
+    ],
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "68.0"
+}
